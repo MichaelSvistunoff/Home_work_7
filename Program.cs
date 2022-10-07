@@ -1,7 +1,7 @@
-﻿Console.WriteLine("Enter number of rows of array ");
+﻿Console.Write("Enter number of rows of array ");
 int rows = int.Parse(Console.ReadLine()!);
 
-Console.WriteLine("Enter number of columns of array ");
+Console.Write("Enter number of columns of array ");
 int cols = int.Parse(Console.ReadLine()!);
 
 int[,] array = getArray(rows, cols);
@@ -24,4 +24,30 @@ void printArray (int[,] array) {
         }
         Console.WriteLine();
     }
+}
+
+Console.Write("Enter i-element of row: ");
+int iToFind = int.Parse(Console.ReadLine()!);
+
+Console.Write("Enter i-element of row: ");
+int jToFind = int.Parse(Console.ReadLine()!);
+
+int result = resultSearch(array, iToFind, jToFind);
+
+int resultSearch (int[,] array, int iFind, int jFind) {
+    int position = 0;
+    if (iFind<=array.GetLength(0) && jFind<=array.GetLength(1)) {
+        for (int i = 0; i < array.GetLength(0); i++) {
+            for (int j = 0; j < array.GetLength(1); j++) {
+                if (i==iFind && j==jFind){
+                    position = array[i, j];
+                    break;
+                }
+            }
+        }
+        Console.WriteLine($"Your element[{iToFind}, {jToFind}] is {position}");
+    } else {
+        Console.WriteLine("You've inputed incrrect indexes!");
+    }
+    return position;
 }
