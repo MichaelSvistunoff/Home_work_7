@@ -36,7 +36,7 @@ int result = resultSearch(array, iToFind, jToFind);
 
 int resultSearch (int[,] array, int iFind, int jFind) {
     int position = 0;
-    if (iFind<=array.GetLength(0) && jFind<=array.GetLength(1)) {
+    if (iFind<array.GetLength(0) && jFind<array.GetLength(1)) {
         for (int i = 0; i < array.GetLength(0); i++) {
             for (int j = 0; j < array.GetLength(1); j++) {
                 if (i==iFind && j==jFind){
